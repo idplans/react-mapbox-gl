@@ -1,5 +1,5 @@
 {
-  "name": "react-mapbox-gl",
+  "name": "@sixfold/react-mapbox-gl",
   "version": "5.1.1",
   "description": "A React binding of mapbox-gl-js",
   "main": "lib/index.js",
@@ -20,7 +20,8 @@
     "prettify": "prettier --write src/*.ts src/*.tsx src/**/*.ts src/**/*.tsx example/src/**/*.ts example/src/**/*.tsx",
     "precommit": "npm run prettify && cd example && node generateRaws.js",
     "prepush": "npm run build",
-    "prepare": "echo \"preparing\" && npm run build"
+    "prepare": "echo \"preparing\" && npm run build",
+    "authenticate": "npx google-artifactregistry-auth"
   },
   "jest": {
     "transform": {
