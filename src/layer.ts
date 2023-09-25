@@ -11,7 +11,8 @@ export type Paint =
   | MapboxGL.SymbolPaint
   | MapboxGL.LinePaint
   | MapboxGL.RasterPaint
-  | MapboxGL.CirclePaint;
+  | MapboxGL.CirclePaint
+  | MapboxGL.HeatmapPaint;
 
 export type Layout =
   | MapboxGL.BackgroundLayout
@@ -357,7 +358,7 @@ export default class Layer extends React.Component<Props> {
     }
 
     if (Array.isArray(children)) {
-      return (children as JSX.Element[][]).reduce(
+      return children.reduce(
         (arr, next) => arr.concat(next),
         [] as JSX.Element[]
       );
