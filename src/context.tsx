@@ -13,7 +13,10 @@ export function withMap<T extends { map: MapboxGl.Map | undefined }>(
   ) {
     return (
       <MapContext.Consumer>
-        {map => <Component map={map} {...props as T} />}
+        {mapFromContext => {
+          const mergedProps = { ...props, map: props.map || mapFromContext };
+          return <Component {...mergedProps as T} />;
+        }}
       </MapContext.Consumer>
     );
   };
